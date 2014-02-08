@@ -33,6 +33,10 @@ public class PlayerMovement : MonoBehaviour
         // Switch this boolean if the player pressed jump in one of the faster updates
         if (Input.GetKeyDown("space"))
             isJumping = true;
+
+        // Set Direction
+        if(rigidbody2D.velocity.x != 0)
+            animator.SetBool("IsRight", Input.GetAxis("Horizontal") > 0);
     }
 
     void FixedUpdate()
@@ -61,11 +65,5 @@ public class PlayerMovement : MonoBehaviour
 
         // Set Animation
         animator.SetBool("IsWalking", Mathf.Abs(rigidbody2D.velocity.x) > 0);
-
-        // Set Direction
-        if(rigidbody2D.velocity.x != 0)
-        {
-            animator.SetBool("IsRight", rigidbody2D.velocity.x > 0);
-        }
     }
 }
