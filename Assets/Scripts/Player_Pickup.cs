@@ -19,7 +19,7 @@ public class Player_Pickup : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            AudioSource.PlayClipAtPoint(collectSound, transform.position);
+            AudioSource.PlayClipAtPoint(collectSound, GameObject.FindGameObjectWithTag("MainCamera").transform.position);
             Destroy(gameObject);
         }
     }
