@@ -49,6 +49,10 @@ public class PlayerMovement : MonoBehaviour
             rigidbody2D.velocity = Vector2.zero;
         }
 
+        // Reset jumping
         isJumping = false;
+
+        // Set Animation
+        GetComponent<Animator>().SetBool("IsWalking", Mathf.Abs(rigidbody2D.velocity.x) > 0);
     }
 }
