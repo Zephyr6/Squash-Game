@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Player_Pickup : MonoBehaviour {
 
+    public AudioClip collectSound = new AudioClip();
+    public string letter = "";
 	// Use this for initialization
 	void Start () {
 	
@@ -15,9 +17,10 @@ public class Player_Pickup : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //if (other.tag == "Player")
-        //{
-            GetComponent<AudioSource>().Play();
-        //}
+        if (other.tag == "Player")
+        {
+            AudioSource.PlayClipAtPoint(collectSound, transform.position);
+            Destroy(gameObject);
+        }
     }
 }
