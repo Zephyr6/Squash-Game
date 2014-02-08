@@ -14,11 +14,18 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 mov;
     // Boolean to tell whether or not the jump key was pressed
     private bool isJumping = false;
+    // Private reference to the animator component
+    private Animator animator;
 
     public bool IsGrounded()
     {
         // Get IsGrounded bool from the Grounded script
         return GetComponent<Grounded>().IsGrounded;
+    }
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -49,6 +56,16 @@ public class PlayerMovement : MonoBehaviour
             rigidbody2D.velocity = Vector2.zero;
         }
 
+        // Reset jumping
         isJumping = false;
+
+        // Set Animation
+        animator.SetBool("IsWalking", Mathf.Abs(rigidbody2D.velocity.x) > 0);
+
+        // Set Direction
+        if(rigidbody2D.velocity.x != 0)
+        {
+            animator.SetBool("IsRight", rigidbody2D.velocity.x > 0);
+        }
     }
 }
