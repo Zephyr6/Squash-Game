@@ -11,10 +11,9 @@ public class Squamper : MonoBehaviour {
         if (IsFalling)
         {
             AudioSource.PlayClipAtPoint(clip, transform.position);
+
             if (other.tag == "Player")
-            {
                 Destroy(other.gameObject);
-            }
         }
     }
 }
