@@ -12,9 +12,7 @@ public class Squamper : MonoBehaviour {
         {
             AudioSource.PlayClipAtPoint(clip, GameObject.FindGameObjectWithTag("MainCamera").transform.position, 1);
             if (other.tag == "Player")
-            {
                 Destroy(other.gameObject);
-            }
         }
     }
 }
