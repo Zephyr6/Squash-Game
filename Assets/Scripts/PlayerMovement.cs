@@ -36,12 +36,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             isJumping = true;
-            AudioSource.PlayClipAtPoint(jumpSound, transform.position);
         }
 
 
         // Set Direction
-        if(rigidbody2D.velocity.x != 0)
+        if (rigidbody2D.velocity.x != 0)
             animator.SetBool("IsRight", Input.GetAxis("Horizontal") > 0);
     }
 
@@ -52,13 +51,16 @@ public class PlayerMovement : MonoBehaviour
             float h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
             float v = 0F;
 
-            if(isJumping && IsGrounded())
+            if (isJumping && IsGrounded())
+            {
                 v = jumpSpeed;
+                AudioSource.PlayClipAtPoint(jumpSound, transform.position);
+            }
             else
                 v = rigidbody2D.velocity.y;
 
             mov = new Vector2(h, v);
-            
+
             rigidbody2D.velocity = mov;
         }
         else
