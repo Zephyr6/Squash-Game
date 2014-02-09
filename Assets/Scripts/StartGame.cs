@@ -6,6 +6,7 @@ public class StartGame : MonoBehaviour {
     public Sprite hover;
     public AudioClip hoverSound;
     public AudioClip selectSound;
+    public int level;
 
     private Sprite normal;
     private SpriteRenderer renderer;
@@ -34,6 +35,6 @@ public class StartGame : MonoBehaviour {
     {
         audio.clip = selectSound;
         audio.Play();
-        Application.LoadLevel(1);
+        Application.LoadLevel(level);
     }
 }
