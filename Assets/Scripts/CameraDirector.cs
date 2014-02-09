@@ -16,10 +16,12 @@ public class CameraDirector : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        var playerObject = GameObject.FindGameObjectWithTag("Player");
+
         if (GameObject.FindGameObjectWithTag("Player") != null)
-        {
-            var playerObject = GameObject.FindGameObjectWithTag("Player");
             transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y + yOffset, transform.position.z);
-        }
+
+        if (transform.position.y <= 0)
+            transform.position = new Vector3(playerObject.transform.position.x, 0, transform.position.z);
 	}
 }
