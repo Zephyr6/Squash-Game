@@ -27,7 +27,6 @@ GameObject:
   - 114: {fileID: 11400000}
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400002}
-  - 81: {fileID: 8100000}
   - 95: {fileID: 9500000}
   - 58: {fileID: 5800000}
   - 60: {fileID: 6000000}
@@ -45,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.39238262, y: -1.00411987, z: 0}
+  m_LocalPosition: {x: -9.41470242, y: -1.58100712, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -130,13 +129,6 @@ PolygonCollider2D:
       - {x: .119999997, y: -1.05499995}
       - {x: .00999999978, y: -.875}
       - {x: -.0199999996, y: -.875}
---- !u!81 &8100000
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2
