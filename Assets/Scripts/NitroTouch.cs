@@ -21,6 +21,7 @@ public class NitroTouch : MonoBehaviour {
         {
             AudioSource.PlayClipAtPoint(touchSound, GameObject.FindGameObjectWithTag("MainCamera").transform.position, 1);
             Destroy(other.gameObject);
+            Application.LoadLevel(8);
         }
     }
 }
