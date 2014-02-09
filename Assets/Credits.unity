@@ -304,6 +304,68 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: eef41dd775f051349b299ea1d2395250, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1604783648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1604783651}
+  - 132: {fileID: 1604783650}
+  - 114: {fileID: 1604783649}
+  m_Layer: 0
+  m_Name: GUI Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1604783649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1604783648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 366ba0bfb64858d48b0a6178dabbb14e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!132 &1604783650
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1604783648}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: Press SPACE to go back
+  m_Anchor: 4
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 12800000, guid: 0ee909bc29f3efc4b80eb81979e3b5a0, type: 3}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &1604783651
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1604783648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .638777971, y: .0399999991, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1619841535
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +433,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 267481fba135eb8419d6c724d550f00c, type: 3}
   - {fileID: 21300000, guid: 595ffabb93efdac468065e84180c91a1, type: 3}
+  - {fileID: 21300000, guid: 70a7053e737799a458efa9e198fd0d48, type: 3}
   - {fileID: 21300000, guid: e980b3e152c6ca440946569eb5ebd59d, type: 3}
   name: {fileID: 645613930}
   description: {fileID: 874468854}

@@ -22,6 +22,10 @@ public class Credits : MonoBehaviour {
             Description = "Developer\nDesign\nSound Effects\nArt and Animation"
         },
         new CreditsItem(){
+            Name = "Ronnie Dickison",
+            Description = "Music"
+        },
+        new CreditsItem(){
             Name = "Clinton Olsen",
             Description = "Programming"
         }
