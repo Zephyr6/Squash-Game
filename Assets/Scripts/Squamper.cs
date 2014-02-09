@@ -16,7 +16,7 @@ public class Squamper : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        AudioSource.PlayClipAtPoint(clip, GameObject.FindGameObjectWithTag("MainCamera").transform.position);
+        AudioSource.PlayClipAtPoint(clip, transform.position);
         if (other.tag == "Player")
         {
             Destroy(other.gameObject);

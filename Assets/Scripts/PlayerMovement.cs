@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Sound that will be played when player jumps
+    public AudioClip jumpSound = new AudioClip();
     // Adjust this speed for movement speed
     public float speed = 200F;
     // Adjust this speed for jump height
@@ -32,10 +34,13 @@ public class PlayerMovement : MonoBehaviour
     {
         // Switch this boolean if the player pressed jump in one of the faster updates
         if (Input.GetKeyDown("space"))
+        {
             isJumping = true;
+        }
+
 
         // Set Direction
-        if(rigidbody2D.velocity.x != 0)
+        if (rigidbody2D.velocity.x != 0)
             animator.SetBool("IsRight", Input.GetAxis("Horizontal") > 0);
     }
 
@@ -46,13 +51,16 @@ public class PlayerMovement : MonoBehaviour
             float h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
             float v = 0F;
 
-            if(isJumping && IsGrounded())
+            if (isJumping && IsGrounded())
+            {
                 v = jumpSpeed;
+                AudioSource.PlayClipAtPoint(jumpSound, transform.position);
+            }
             else
                 v = rigidbody2D.velocity.y;
 
             mov = new Vector2(h, v);
-            
+
             rigidbody2D.velocity = mov;
         }
         else
