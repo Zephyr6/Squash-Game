@@ -4789,6 +4789,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 46a0793241d2aed4993b00a2b6a7629c, type: 2}
+      propertyPath: NextLevel
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46a0793241d2aed4993b00a2b6a7629c, type: 2}
   m_RootGameObject: {fileID: 1911816831}
@@ -9710,7 +9714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b0b01ada9fa114991f8a1f5612cf89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevel: 0
+  NextLevel: 10
   doorOpen: {fileID: 8300000, guid: 1e5c409c9cdb9c54f89c3b22b576ce97, type: 3}
   door: {fileID: 1826429362}
 --- !u!60 &1911816834
