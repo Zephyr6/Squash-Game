@@ -19,7 +19,7 @@ public class NitroTouch : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            AudioSource.PlayClipAtPoint(touchSound, transform.position, 100);
+            AudioSource.PlayClipAtPoint(touchSound, GameObject.FindGameObjectWithTag("MainCamera").transform.position, 1);
             Destroy(other.gameObject);
         }
     }
