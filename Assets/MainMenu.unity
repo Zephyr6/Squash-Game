@@ -402,7 +402,7 @@ MonoBehaviour:
   hover: {fileID: 21300000, guid: 87d73b09ee8381c45879be1b7ec1645a, type: 3}
   hoverSound: {fileID: 8300000, guid: 8d59de6e6114e014691c815dc23eadf0, type: 3}
   selectSound: {fileID: 8300000, guid: 86a6f8ce87eff664d881da4f05e496ca, type: 3}
-  level: 1
+  level: 3
 --- !u!82 &1419702023
 AudioSource:
   m_ObjectHideFlags: 0
@@ -696,6 +696,10 @@ Prefab:
     - target: {fileID: 400000, guid: 3e899845b53eb734d9320bdafd723ec1, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e899845b53eb734d9320bdafd723ec1, type: 2}
+      propertyPath: level
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e899845b53eb734d9320bdafd723ec1, type: 2}
