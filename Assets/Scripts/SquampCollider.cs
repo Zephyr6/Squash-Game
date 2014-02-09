@@ -3,10 +3,9 @@ using System.Collections;
 
 public class SquampCollider : MonoBehaviour {
 
-    public AudioClip clip = new AudioClip();
     public float TimeToSquamp = 5.0f;
-
     private bool isFalling = false;
+    private bool isRising = false;
     private float timer = 0;
     private Vector3 startPosition;
     private float fallSpeed = 10;
@@ -28,6 +27,10 @@ public class SquampCollider : MonoBehaviour {
         }
         else
         {
+            if (!isRising && !isFalling)
+            {
+                rigidbody2D.velocity = Vector2.zero;
+            }
             timer -= Time.deltaTime;
         }
 
@@ -35,6 +38,7 @@ public class SquampCollider : MonoBehaviour {
         {
             if (!isFalling)
             {
+                isRising = false;
                 rigidbody2D.velocity = Vector2.zero;
             }
         }
@@ -42,19 +46,10 @@ public class SquampCollider : MonoBehaviour {
         if (GetComponentInChildren<SquampGrounded>().IsGrounded)
         {
             isFalling = false;
+            isRising = true;
             rigidbody2D.velocity = new Vector2(0, fallSpeed * 0.3F);
         }
 
-        if (GetComponentInChildren<SquampGrounded>().IsGrounded)
-        {
-            rigidbody2D.velocity = new Vector2(0, fallSpeed);
-        }
-
         rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
-
-        if (transform.position == startPosition)
-        {
-            rigidbody2D.velocity = new Vector2(0, 0);
-        }
 	}
 }
