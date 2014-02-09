@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Sound that will be played when player jumps
+    public AudioClip jumpSound = new AudioClip();
     // Adjust this speed for movement speed
     public float speed = 200F;
     // Adjust this speed for jump height
@@ -32,7 +34,11 @@ public class PlayerMovement : MonoBehaviour
     {
         // Switch this boolean if the player pressed jump in one of the faster updates
         if (Input.GetKeyDown("space"))
+        {
             isJumping = true;
+            AudioSource.PlayClipAtPoint(jumpSound, transform.position);
+        }
+
 
         // Set Direction
         if(rigidbody2D.velocity.x != 0)
