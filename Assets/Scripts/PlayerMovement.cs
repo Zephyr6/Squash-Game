@@ -40,8 +40,11 @@ public class PlayerMovement : MonoBehaviour
 
 
         // Set Direction
-        if (rigidbody2D.velocity.x != 0)
-            animator.SetBool("IsRight", Input.GetAxis("Horizontal") > 0);
+        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+            animator.SetBool("IsRight", false);
+
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            animator.SetBool("IsRight", true);
     }
 
     void FixedUpdate()
