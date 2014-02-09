@@ -4,10 +4,6 @@ using System.Collections;
 public class SquampGrounded : MonoBehaviour {
     public Transform groundCheck;
     public bool IsGrounded = false;
-    void Start()
-    {
-
-    }
 
     void Update()
     {
