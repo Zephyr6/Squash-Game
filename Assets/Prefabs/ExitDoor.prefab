@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 60: {fileID: 6000000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: ExitDoor
   m_TagString: Untagged
@@ -75,6 +76,20 @@ PolygonCollider2D:
       - {x: -.85474056, y: .594958127}
       - {x: -.861375332, y: -1.51924789}
       - {x: .895967484, y: -1.51091087}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b0b01ada9fa114991f8a1f5612cf89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextLevel: 0
+  doorOpen: {fileID: 8300000, guid: 1e5c409c9cdb9c54f89c3b22b576ce97, type: 3}
+  door: {fileID: 100002}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
