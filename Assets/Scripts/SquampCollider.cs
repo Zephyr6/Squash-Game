@@ -7,7 +7,7 @@ public class SquampCollider : MonoBehaviour {
     public float TimeToSquamp = 5.0f;
     private float timer = 0;
     private Vector3 startPosition = new Vector3();
-    private float fallSpeed = 100;
+    private float fallSpeed = 10;
 	// Use this for initialization
 	void Start () {
         timer = TimeToSquamp;
@@ -17,7 +17,7 @@ public class SquampCollider : MonoBehaviour {
 	void Update () {
         if (timer <= 0)
         {
-            GetComponent<Rigidbody2D>().velocity.Set(0, fallSpeed);
+            rigidbody2D.velocity = new Vector2(0, -fallSpeed);
             timer = TimeToSquamp;
         }
         else
@@ -27,12 +27,10 @@ public class SquampCollider : MonoBehaviour {
 
         if (GetComponentInChildren<SquampGrounded>().IsGrounded)
         {
-            GetComponent<Rigidbody2D>().velocity.Set(0, -fallSpeed);
+            rigidbody2D.velocity = new Vector2(0, fallSpeed);
         }
-        else if (transform.position == startPosition)
-        {
-            GetComponent<Rigidbody2D>().velocity.Set(0, 0);
-        }
+
+        rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
 	}
 
     void OnTriggerEnter2D(Collider2D other)
