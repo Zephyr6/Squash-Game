@@ -3,7 +3,6 @@ using System.Collections;
 
 public class SquampCollider : MonoBehaviour {
 
-    public AudioClip clip = new AudioClip();
     public float TimeToSquamp = 5.0f;
     private float timer = 0;
     private Vector3 startPosition = new Vector3();
@@ -31,14 +30,10 @@ public class SquampCollider : MonoBehaviour {
         }
 
         rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
-	}
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        AudioSource.PlayClipAtPoint(clip, GameObject.FindGameObjectWithTag("MainCamera").transform.position);
-        if (other.tag == "Player")
+        if (transform.position == startPosition)
         {
-            Destroy(other.gameObject);
+            rigidbody2D.velocity = new Vector2(0, 0);
         }
-    }
+	}
 }
