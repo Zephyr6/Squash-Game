@@ -7,5 +7,7 @@ public class Grounded : MonoBehaviour {
 
 	void Update () {
         IsGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        if(!IsGrounded)
+            IsGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Squamp"));
 	}
 }
